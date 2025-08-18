@@ -10,6 +10,8 @@ interface FetchMoviesResponse {
 
 export const fetchMovies = async (query: string): Promise<Movie[]> => {
   try {
+    console.log("TOKEN:", TOKEN);
+
     const response = await axios.get<FetchMoviesResponse>(BASE_URL, {
       params: { query },
       headers: {
